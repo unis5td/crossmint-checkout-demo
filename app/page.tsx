@@ -6,7 +6,7 @@ export default function Home() {
     const clientApiKey = process.env.NEXT_PUBLIC_CLIENT_API_KEY as string;
     const collectionId = process.env.NEXT_PUBLIC_COLLECTION_ID as string;
 
-    const currentUserEmail = "로그인한_사용자_이메일"; // 실제로는 로그인 시스템에서 값을 받아와야 함
+    const currentUserEmail = "user@example.com"; // 실제로는 로그인 시스템에서 값을 받아와야 함
 
     return (
         <div className="flex flex-col items-center justify-start h-screen p-6 bg-white">
