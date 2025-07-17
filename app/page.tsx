@@ -7,9 +7,8 @@ import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
   // 쿼리 파라미터로 templateId 동적 수신
-  const templateId = router.query.templateId as string;
+    const templateId = router.query.templateId as string;
 
-export default function Home() {
     const clientApiKey = process.env.NEXT_PUBLIC_CLIENT_API_KEY as string;
     const collectionId = process.env.NEXT_PUBLIC_COLLECTION_ID as string;
 
