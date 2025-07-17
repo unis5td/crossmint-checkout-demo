@@ -2,12 +2,18 @@
 
 import { CrossmintProvider, CrossmintHostedCheckout } from "@crossmint/client-sdk-react-ui";
 
-import { useRouter } from "next/router";
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Home() {
-  const router = useRouter();
+  const searchParams = useSearchParams();
   // 쿼리 파라미터로 templateId 동적 수신
-    const templateId = router.query.templateId as string;
+    const templateId = searchParams.get('templateId');
+
+  // 4. templateId가 없을 경우, 로딩 상태나 에러 메시지를 보여줍니다.
+    if (!templateId) {
+    return <div>Loading or invalid template ID...</div>;
+    }
 
     const clientApiKey = process.env.NEXT_PUBLIC_CLIENT_API_KEY as string;
     const collectionId = process.env.NEXT_PUBLIC_COLLECTION_ID as string;
