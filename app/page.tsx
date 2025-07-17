@@ -5,6 +5,7 @@ import { CrossmintProvider, CrossmintHostedCheckout } from "@crossmint/client-sd
 export default function Home() {
     const clientApiKey = process.env.NEXT_PUBLIC_CLIENT_API_KEY as string;
     const collectionId = process.env.NEXT_PUBLIC_COLLECTION_ID as string;
+    const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
 
     return (
         <div className="flex flex-col items-center justify-start h-screen p-6 bg-white">
@@ -12,9 +13,9 @@ export default function Home() {
                 <div className="max-w-[450px] w-full">
                     <CrossmintHostedCheckout
                         lineItems={{
-                            collectionLocator: `crossmint:${collectionId}`,
+                            collectionLocator: `crossmint:${collectionId}:${templateId}`,
                             callData: {
-                                totalPrice: "5",
+                                totalPrice: "3",
                                 quantity: 1,
                             },
                         }}
